@@ -1,0 +1,9 @@
+file=$1; shift;
+cfile=$file.c;
+outfile=$file.out;
+./$outfile $* | sed 's/^/-\t/' | $HOME/bin/prewrite $cfile
+echo "/*" | $HOME/bin/prewrite $cfile
+echo Command: ./"$outfile" "$*" | $HOME/bin/prewrite $cfile
+echo "Output:" | $HOME/bin/prewrite $cfile
+echo "*/" >> $cfile
+
