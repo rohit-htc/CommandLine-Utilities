@@ -1,0 +1,13 @@
+until "$@" > null
+do
+	echo watching for "$*"
+	sleep 6
+done
+echo "$*" command ran succesfully
+#echo "$1"
+#echo "I am here"
+#while $@
+#do
+#echo watching for "$1"
+#	sleep 6
+#done
