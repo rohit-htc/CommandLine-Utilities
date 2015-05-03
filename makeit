@@ -1,0 +1,4 @@
+for i in $*
+do
+	cc -o $i.out $i.c
+done
