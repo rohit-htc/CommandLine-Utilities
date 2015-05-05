@@ -2,7 +2,7 @@ file=$1; shift;
 cfile=$file.c;
 outfile=$file.out;
 echo "*/" | $HOME/bin/prewrite $cfile
-./$outfile $* | sed 's/^/-\t/' | $HOME/bin/prewrite $cfile
+./$outfile $* 2>&1| sed 's/^/-\t/' | $HOME/bin/prewrite $cfile
 echo "Output:" | $HOME/bin/prewrite $cfile
 echo Command: ./"$outfile" "$*" | $HOME/bin/prewrite $cfile
 echo "/*" | $HOME/bin/prewrite $cfile
